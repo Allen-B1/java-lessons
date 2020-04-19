@@ -31,8 +31,8 @@ h2 {
 <p>The statements inside the body are executed if condition is <code>true</code>. condition is a <code>boolean</code> expression.</p>
 <div class="mermaid">graph TD
 condition{"condition"} --> |true| body["body"]
-condition --> |false| continue["next statement"]
-body --> continue</div><h3><code>else</code></h3>
+condition --> |false| next("next statement")
+body --> next</div><h3><code>else</code></h3>
 <pre><code class="language-java">if (condition) {
 	// if body
 } else {
@@ -44,8 +44,8 @@ body --> continue</div><h3><code>else</code></h3>
 <div class="mermaid">graph TD
 condition{"condition"} --> |true| body["if body"]
 condition --> |false| else["else body"]
-else --> continue["next statement"]
-body --> continue</div><h3><code>else if</code></h3>
+else --> next("next statement")
+body --> next</div><h3><code>else if</code></h3>
 <pre><code class="language-java">if (condition1) {
 	// if body
 } else if (condition2) {
@@ -56,7 +56,7 @@ body --> continue</div><h3><code>else if</code></h3>
 cond1{"condition1"} --> |true| if["if body"]
 cond1 --> |false| cond2
 cond2{"condition2"} --> |true| elif["else if body"]
-cond2 --> |false| next["Next Statement"]
+cond2 --> |false| next("next statement")
 if --> next
 elif --> next</div><p>You can chain <code>else if</code>s and end in an <code>else</code>.</p>
 <pre><code class="language-java">if (condition1) {

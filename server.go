@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"net/http"
-	"io/ioutil"
-	"os"
 	"fmt"
+	"github.com/gorilla/mux"
 	"html/template"
+	"io/ioutil"
 	"log"
+	"net/http"
+	"os"
 	"strings"
 )
 
@@ -18,7 +18,7 @@ C1 C2
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			w.Header().Set("Location", "/")
 			w.WriteHeader(303)
@@ -36,7 +36,7 @@ func main() {
 			log.Println(err)
 		}
 	})
-	r.HandleFunc("/{lesson}", func (w http.ResponseWriter, r *http.Request) {
+	r.HandleFunc("/{lesson}", func(w http.ResponseWriter, r *http.Request) {
 		vars := mux.Vars(r)
 		body, err := ioutil.ReadFile("out/" + vars["lesson"] + ".html")
 		if err != nil {
@@ -50,5 +50,5 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	http.ListenAndServe(":" + port, r)
+	http.ListenAndServe(":"+port, r)
 }

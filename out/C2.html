@@ -31,7 +31,7 @@ h2 {
 <p>Executes body if condition is <code>true</code>. Repeat.</p>
 <div class="mermaid">graph TD
 condition{condition} --> |true| body
-condition --> |false| next["next statement"]
+condition --> |false| next("next statement")
 body --> condition</div><h3><code>break</code> statements</h3>
 <pre><code class="language-java">break;
 </code></pre>
@@ -40,7 +40,7 @@ body --> condition</div><h3><code>break</code> statements</h3>
 condition{condition} --> |true| body
 condition --> |false| next
 body --> condition
-body --> |break| next["next statement"]</div><h3><code>continue</code> statements</h3>
+body --> |break| next("next statement")</div><h3><code>continue</code> statements</h3>
 <pre><code class="language-java">continue;
 </code></pre>
 <p>can be placed inside a <code>while</code> loop to skip the body and start over.</p>
@@ -48,7 +48,7 @@ body --> |break| next["next statement"]</div><h3><code>continue</code> statement
 condition{condition} --> |true| body
 condition --> |false| next
 body --> condition
-body --> |break| next["next statement"]
+body --> |break| next("next statement")
 body --> |continue| condition</div><h2><code>do</code>...<code>while</code></h2>
 <pre><code class="language-java">do {
 	// body
@@ -58,9 +58,9 @@ body --> |continue| condition</div><h2><code>do</code>...<code>while</code></h2>
 <div class="mermaid">graph TD
 body --> condition
 condition{condition} --> |true| body
-condition --> |false| next
-body --> |break| condition
-body --> |continue| body</div><h2><code>for</code></h2>
+condition --> |false| next("next statement")
+body --> |break| next
+body --> |continue| condition</div><h2><code>for</code></h2>
 <pre><code class="language-java">for (initialization; condition; postcondition) {
 	// body
 }
@@ -71,8 +71,8 @@ init[initialization] --> cond{condition}
 cond --> |true| body
 body --> post[postcondition]
 post --> cond
-cond --> |false| next["next statement"]
+cond --> |false| next("next statement")
 body --> |break| next
-body --> |continue| body</div>
+body --> |continue| post</div>
 	</body>
 </html>
