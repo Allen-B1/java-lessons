@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<title>I5</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Operators</h1>
+<p>Operators allow you to combine multiple values (the <em>operands</em>), either resulting in one value (the <em>result</em>) or an action.</p>
+<h2>Numeric</h2>
+<p>All numeric operators that take two operands must have operands that have the same type.</p>
+<h3>Arithmetic</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addition</td>
+<td><code>a + b</code></td>
+<td>sum of <code>a</code> + <code>b</code></td>
+</tr>
+<tr>
+<td>subtraction</td>
+<td><code>a - b</code></td>
+<td>difference of <code>a</code> - <code>b</code></td>
+</tr>
+<tr>
+<td>multiplication</td>
+<td><code>a * b</code></td>
+<td>product of <code>a</code> x <code>b</code></td>
+</tr>
+<tr>
+<td>division</td>
+<td><code>a / b</code></td>
+<td>quotient of <code>a</code> ÷ <code>b</code></td>
+</tr>
+<tr>
+<td>modulus</td>
+<td><code>a % b</code></td>
+<td>remainder of <code>a</code> ÷ <code>b</code></td>
+</tr>
+<tr>
+<td>negation</td>
+<td><code>-a</code></td>
+<td>additive inverse of <code>a</code></td>
+</tr>
+<tr>
+<td>unary plus</td>
+<td><code>+a</code></td>
+<td><code>a</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Bitwise &amp; Bitshifts</h3>
+<p>These aren't as commonly used, but they're listed here for the sake of completion.</p>
+<p><a href="https://en.wikipedia.org/wiki/Bitwise_operator">More information</a>, if you're curious.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitwise and</td>
+<td><code>a &amp; b</code></td>
+</tr>
+<tr>
+<td>bitwise or</td>
+<td><code>a | b</code></td>
+</tr>
+<tr>
+<td>bitwise xor</td>
+<td><code>a ^ b</code></td>
+</tr>
+<tr>
+<td>bitwise not</td>
+<td><code>~a</code></td>
+</tr>
+<tr>
+<td>left bitshift</td>
+<td><code>a &lt;&lt; b</code></td>
+</tr>
+<tr>
+<td>sign-extending right bitshift</td>
+<td><code>a &gt;&gt; b</code></td>
+</tr>
+<tr>
+<td>zero-extending right bitshift</td>
+<td><code>a &gt;&gt;&gt; b</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Comparison</h2>
+<p>These operators also take two operands (<code>a</code> and <code>b</code>) that have the same type and give a result that is a <code>boolean</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a == b</code></td>
+<td><code>true</code> if <code>a</code> = <code>b</code></td>
+</tr>
+<tr>
+<td><code>a != b</code></td>
+<td><code>true</code> if <code>a</code> ≠ <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &lt; b</code></td>
+<td><code>true</code> if <code>a</code> &lt; <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &gt; b</code></td>
+<td><code>true</code> if <code>a</code> &gt; <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &lt;= b</code></td>
+<td><code>true</code> if <code>a</code> ≤ <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &gt;= b</code></td>
+<td><code>true</code> if <code>a</code> ≥ <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Conditional</h2>
+<p>These operators take two <code>boolean</code> operators and result in a <code>boolean</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td><code>a &amp;&amp; b</code></td>
+<td><code>true</code> if <code>a</code> and <code>b</code> are <code>true</code></td>
+</tr>
+<tr>
+<td>or</td>
+<td><code>a || b</code></td>
+<td><code>true</code> if <code>a</code> or <code>b</code> (or both) is <code>true</code></td>
+</tr>
+<tr>
+<td>not</td>
+<td><code>!a</code></td>
+<td><code>true</code> if <code>a</code> is <code>false</code> and <code>false</code> if <code>a</code> is <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Ternary</h2>
+<p><code>a ? b : c</code> results in <code>b</code> if <code>a</code> is <code>true</code>, otherwise <code>c</code>.</p>
+<p><code>a</code> must be a <code>boolean</code>. <code>b</code> and <code>c</code> must have the same type.</p>
+<h2>Concatenation</h2>
+<p><code>a + b</code> can also be used on <code>String</code>s. It results in <code>a</code>, followed by <code>b</code>. For example,</p>
+<pre><code class="language-java">&quot;Hello&quot; + &quot;World&quot;
+</code></pre>
+<p>would result in</p>
+<pre><code class="language-java">&quot;HelloWorld&quot;
+</code></pre>
+
+	</body>
+</html>
