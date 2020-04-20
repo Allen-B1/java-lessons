@@ -12,6 +12,6 @@ for (let file of files) {
 		let content = fs.readFileSync(file, {encoding:"utf8"});
 		let rendered = md.render(content);
 		rendered = TEMPLATE.replace(/\[TITLE\]/g, file.slice(0,-3)).replace(/\[CONTENT\]/g, rendered);
-		fs.writeFileSync("out/" + file.slice(0,-3) + ".html", rendered);
+		fs.writeFileSync("html/" + file.slice(0,-3) + ".html", rendered);
 	}
 }
