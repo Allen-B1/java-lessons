@@ -2,7 +2,8 @@ const hljs = require('highlightjs');
 const md = require('markdown-it')({
 	breaks: true,
 	linkify: true,
-}).use(require('markdown-it-mermaid').default);
+}).use(require('markdown-it-mermaid').default)
+	.use(require('markdown-it-sup'));
 
 const fs = require('fs');
 const TEMPLATE = fs.readFileSync("template.html", {encoding:"utf8"});

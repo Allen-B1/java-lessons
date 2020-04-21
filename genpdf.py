@@ -40,7 +40,7 @@ class PrintBrowser:
             ui.write(ecodes.EV_KEY, ecodes.KEY_ENTER, 0)
             ui.syn()
         
-        time.sleep(3)
+        time.sleep(7)
 
         driver.close()
 
