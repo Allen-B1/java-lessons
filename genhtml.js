@@ -7,7 +7,7 @@ const md = require('markdown-it')({
 
 const fs = require('fs');
 const TEMPLATE = fs.readFileSync("template.html", {encoding:"utf8"});
-var files = fs.readdirSync(".");
+var files = process.argv.slice(1);
 for (let file of files) {
 	if (file.endsWith(".md")) {
 		let content = fs.readFileSync(file, {encoding:"utf8"});

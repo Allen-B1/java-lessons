@@ -40,15 +40,16 @@ class PrintBrowser:
             ui.write(ecodes.EV_KEY, ecodes.KEY_ENTER, 0)
             ui.syn()
         
-        time.sleep(7)
+        time.sleep(4)
 
         driver.close()
 
 import pathlib
+import sys
 
 folder = str(pathlib.Path(__file__).parent.absolute())
-files = os.listdir(folder + "/html")
-
+files = sys.argv[1:]
 browser = PrintBrowser()
 for file in files:
-    browser.print("file://" + folder + "/html/" + file, folder + "/pdf/" + file[:-5] + ".pdf")
+    if file.endswith(".md"):
+        browser.print("file://" + folder + "/html/" + file[:-3] + ".html", folder + "/pdf/" + file[:-3] + ".pdf")
