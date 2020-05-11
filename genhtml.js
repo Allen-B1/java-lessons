@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const hljs = require('highlightjs');
 const md = require('markdown-it')({
 	breaks: true,
