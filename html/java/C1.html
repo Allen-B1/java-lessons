@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>java/C1</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Comparison Operators</h1>
+<p>These operators also take two operands (<code>a</code> and <code>b</code>) that have the same type and give a result that is a <code>boolean</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a == b</code></td>
+<td><code>true</code> if <code>a</code> = <code>b</code></td>
+</tr>
+<tr>
+<td><code>a != b</code></td>
+<td><code>true</code> if <code>a</code> ≠ <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &lt; b</code></td>
+<td><code>true</code> if <code>a</code> &lt; <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &gt; b</code></td>
+<td><code>true</code> if <code>a</code> &gt; <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &lt;= b</code></td>
+<td><code>true</code> if <code>a</code> ≤ <code>b</code></td>
+</tr>
+<tr>
+<td><code>a &gt;= b</code></td>
+<td><code>true</code> if <code>a</code> ≥ <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-java">int a = 5;
+int b = 3;
+System.out.println(a == b); // false
+System.out.println(a &lt; b); // false
+
+boolean c = a &gt;= b;
+System.out.println(c); // true
+</code></pre>
+<h2><code>String</code> equality</h2>
+<p>For <code>String</code>s, instead of <code>a == b</code> and <code>a != b</code>, use <code>a.equals(b)</code> and <code>!a.equals(b)</code>.</p>
+<pre><code class="language-java">String hello = &quot;Hello&quot;;
+String world = &quot;World&quot;;
+String helloWorld = &quot;HelloWorld&quot;;
+
+// == with Strings is unreliable
+System.out.println(hello + world == helloWorld);
+
+// .equals() always works
+System.out.println((hello+world).equals(helloWorld));
+</code></pre>
+
+	</body>
+</html>

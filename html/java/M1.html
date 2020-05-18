@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>java/M1</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Arithmetic Operators</h1>
+<p>Operators allow you to combine multiple values (the <em>operands</em>) into one value (the <em>result</em>).</p>
+<p>All arithmetic operators that take two operands take two operands that have the same type.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addition</td>
+<td><code>a + b</code></td>
+<td>sum of <code>a</code> + <code>b</code></td>
+</tr>
+<tr>
+<td>subtraction</td>
+<td><code>a - b</code></td>
+<td>difference of <code>a</code> - <code>b</code></td>
+</tr>
+<tr>
+<td>multiplication</td>
+<td><code>a * b</code></td>
+<td>product of <code>a</code> x <code>b</code></td>
+</tr>
+<tr>
+<td>division</td>
+<td><code>a / b</code></td>
+<td>quotient of <code>a</code> ÷ <code>b</code></td>
+</tr>
+<tr>
+<td>modulus</td>
+<td><code>a % b</code></td>
+<td>remainderrs of <code>a</code> ÷ <code>b</code></td>
+</tr>
+<tr>
+<td>negation</td>
+<td><code>-a</code></td>
+<td>additive inverse of <code>a</code></td>
+</tr>
+</tbody>
+</table>
+<p>An example.</p>
+<pre><code class="language-java">int a = 5;
+int b = 3;
+System.out.println(a + b); // 8
+</code></pre>
+<h2><code>+</code> on <code>String</code>s</h2>
+<p><code>a + b</code> results in <code>a</code> followed by <code>b</code> if either <code>a</code> or <code>b</code> is a <code>String</code>.</p>
+<pre><code class="language-java">System.out.println(&quot;Hello&quot; + &quot;World&quot;); // &quot;HelloWorld&quot;
+</code></pre>
+
+	</body>
+</html>

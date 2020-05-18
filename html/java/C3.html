@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>java/C3</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1><code>if</code> Statements</h1>
+<p>An <code>if</code> statement executes some set of statements if a given condition is true.</p>
+<pre><code class="language-java">if (condition) {
+	// body
+}
+// next statement
+</code></pre>
+<div class="mermaid">graph TD
+condition{"condition"} --> |true| body["body"]
+condition --> |false| next("next statement")
+body --> next</div><h2><code>else</code> Clauses</h2>
+<p>An <code>else</code> clause is executed if the condition of the associated <code>if</code> statement is false.</p>
+<pre><code class="language-java">if (condition) {
+	// if body
+} else {
+	// else body
+}
+// next statement
+</code></pre>
+<div class="mermaid">graph TD
+condition{"condition"} --> |true| body["if body"]
+condition --> |false| else["else body"]
+else --> next("next statement")
+body --> next</div><h2><code>else if</code> Clauses</h2>
+<p>An <code>else if</code> clause is executed if the condition of the associated <code>if</code><br>
+statement is false and the condition of the <code>else if</code> clause is true.</p>
+<pre><code class="language-java">if (condition1) {
+	// if body
+} else if (condition2) {
+	// else if body
+}
+</code></pre>
+<div class="mermaid">graph TD
+cond1{"condition1"} --> |true| if["if body"]
+cond1 --> |false| cond2
+cond2{"condition2"} --> |true| elif["else if body"]
+cond2 --> |false| next("next statement")
+if --> next
+elif --> next</div><p>You can chain <code>else if</code>s and optionally end in an <code>else</code>.</p>
+<pre><code class="language-java">if (condition1) {
+	// executed if condition1 is true
+} else if (condition2) {
+	// executed if condition1 is false and condition2 is true
+} else if (condition3) {
+	// executed if condition1 and condition2 are false and condition3 is true
+} else {
+	// executed if condition1, condition2, and condition3 are false
+}
+</code></pre>
+
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>java/I6</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Type Conversions</h1>
+<h2>Truncation</h2>
+<p>When a floating-point type is converted to an integer type, the value is rounded down.</p>
+<h2>Type Casts</h2>
+<p>Type casts allow you to convert values from one type to another type.</p>
+<pre><code class="language-java">(newType)oldValue
+</code></pre>
+<pre><code class="language-java">double grade = 89.9;
+System.out.println(grade);      // 89.9
+System.out.println((int)grade); // 89
+</code></pre>
+<h2>Implicit Conversions</h2>
+<p>In certain cases, values will automatically be converted to a different type.</p>
+
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>java/I5</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Input / Output</h1>
+<h2>Output</h2>
+<p><code>System.out.println</code> will print a value and start a new line.</p>
+<pre><code class="language-java">System.out.println(value);
+</code></pre>
+<p><code>System.out.print</code> will print a value without starting a new line.</p>
+<pre><code class="language-java">System.out.print(value);
+</code></pre>
+<h2>Input</h2>
+<p>For input, we'll have to use a new data type called <code>Scanner</code>.</p>
+<p>To use <code>Scanner</code>, you need to <em>import</em> it, so that the Java compiler knows what <code>Scanner</code> is. To do this, put an import statement at the top of your code.</p>
+<pre><code class="language-java">import java.util.Scanner;
+</code></pre>
+<p>A variable of type <code>Scanner</code> must be declared first and assigned to the <code>new Scanner(System.in)</code>.</p>
+<pre><code class="language-java">Scanner sc = new Scanner(System.in);
+</code></pre>
+<p>To actually retrieve a <code>String</code> from the user, use <code>sc.nextLine()</code>. That expression that will ask the user for input then evaluate to whatever the user types in.</p>
+<p>If you want a <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, or <code>boolean</code>, use <code>nextByte</code>, <code>nextShort</code>, <code>nextInt</code>, <code>nextLong</code>, <code>nextFloat</code>, <code>nextDouble</code>, and <code>nextBoolean</code> instead of <code>nextLine</code>.</p>
+
+	</body>
+</html>

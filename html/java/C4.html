@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>java/C4</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1><code>while</code> Loops</h1>
+<p>A <code>while</code> loop executes a set of statements until a given condition becomes false.</p>
+<pre><code class="language-java">while (condition) {
+	// body
+}
+</code></pre>
+<div class="mermaid">graph TD
+condition{condition} --> |true| body
+condition --> |false| next("next statement")
+body --> condition</div><h2><code>break</code></h2>
+<p>A <code>break</code> statement causes the computer to exit from <code>while</code> loop early and continue on to the next statement.</p>
+<pre><code class="language-java">break;
+</code></pre>
+<div class="mermaid">graph TD
+condition{condition} --> |true| body
+condition --> |false| next
+body --> condition
+body --> |break| next("next statement")</div><h2><code>continue</code></h2>
+<p>A <code>continue</code> statement causes the computer to jump to the beginning of the <code>while</code> loop.</p>
+<pre><code class="language-java">continue;
+</code></pre>
+<div class="mermaid">graph TD
+condition{condition} --> |true| body
+condition --> |false| next
+body --> condition
+body --> |break| next("next statement")
+body --> |continue| condition</div><h2><code>do</code>...<code>while</code> Loop</h2>
+<p>The <code>do</code>...<code>while</code> loop is like a <code>while</code> loop except it executes the body <em>before</em> checking for the condition.</p>
+<pre><code class="language-java">do {
+	// body
+} while (condition);
+</code></pre>
+<div class="mermaid">graph TD
+body --> condition
+condition{condition} --> |true| body
+condition --> |false| next("next statement")
+body --> |break| next
+body --> |continue| condition</div>
+	</body>
+</html>

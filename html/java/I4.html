@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>java/I4</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Variables</h1>
+<p>A <em>variable</em> is a storage location, like a box that has both a label on it (variable name) and something inside of it (value).</p>
+<p>A variable name can only consist of underscores (_), uppercase and lowercase letters, and digits (0-9) and cannot start with a digit.</p>
+<p>Before you can use a variable, you must first state that it exists. To do that, you use a type of statement called a <em>variable declaration</em>, which looks like this:</p>
+<pre><code>typeName variableName;
+</code></pre>
+<p>where <em>typeName</em> should be replaced by the data type that will go inside a variable, and <em>variableName</em> should be replaced by the name of the variable.</p>
+<p>For example, the statements</p>
+<pre><code class="language-java">String word;
+int age;
+</code></pre>
+<p>create two variables, one called <code>word</code> which can (only) hold <code>String</code>s, and one called <code>age</code> which can (only) hold <code>int</code>s.</p>
+<pre><code class="language-plaintext">+-------+ +-----+
+| null  | |  0  |
++-------+ +-----+
+  word      age
+</code></pre>
+<p>To change what's inside the metaphorical box, you need to <em>assign</em> the variable to something.</p>
+<pre><code class="language-java">variableName = expression;
+</code></pre>
+<p>For example,</p>
+<pre><code class="language-java">word = &quot;hello&quot;;
+age = 5;
+</code></pre>
+<pre><code class="language-plaintext">+-------+ +-----+
+|&quot;hello&quot;| |  5  |
++-------+ +-----+
+  word      age
+</code></pre>
+<p>It's possible to declare and assign to a variable in the same statement.</p>
+<pre><code class="language-java">String favoriteBook = &quot;Aristotle and Dante Discover the Secrets of the Universe&quot;;
+</code></pre>
+<h3><code>final</code> variables</h3>
+<p><code>final</code> variables can only be assigned to once.</p>
+<p>A <code>final</code> variable declaration is a normal variable declaration with the addition of <code>final</code> in front.</p>
+<pre><code class="language-java">final typeName variableName;
+// OR
+final typeName variableName = expression;
+</code></pre>
+<p>An example.</p>
+<pre><code class="language-java">final int PAPER_HEIGHT = 11;
+PAPER_HEIGHT = 12; // error! second assignment
+</code></pre>
+<h3>Exercise</h3>
+<p>Declare variables that represent your age, name, grade in school, and whether you like video games.</p>
+
+	</body>
+</html>
