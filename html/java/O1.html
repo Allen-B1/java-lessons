@@ -29,9 +29,8 @@ pre, code, tt {
 		</style>
 	</head>
 	<body>
-		<p>TODO</p>
-<h1>Methods</h1>
-<p>Methods allow you to put code that you commonly used</p>
+		<h1>Methods</h1>
+<p>Methods allow you to reuse commonly used code.</p>
 <pre><code class="language-java">class Main {
 	static void sayHiVariations() {
 		System.out.println(&quot;Hi&quot;);
@@ -39,9 +38,39 @@ pre, code, tt {
 		System.out.println(&quot;Howdy&quot;);		
 	}
 
-	public static void main() {
-		// 
-		sayHiVariations();	
+	public static void main(String[] args) {
+		sayHiVariations();
+	}
+}
+</code></pre>
+<h2>Arguments</h2>
+<pre><code class="language-java">class Main {
+	static void printDoubleAndTriple(int a) {
+		System.out.println(a * 2);
+		System.out.println(a * 3);
+	}
+
+	public static void main(String[] args) {
+		// 500
+		// 1000
+		printDoubleAndTriple(500);
+	}
+}
+</code></pre>
+<h2>Return Values</h2>
+<pre><code class="language-java">class Main {
+	static void getDouble(int a) int {
+		return a * 2;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(getDouble(5)); // 10
+
+		int c = getDouble(2);
+		System.out.println(c); // 4
+
+		c = getDouble(c);
+		System.out.println(c); // 8
 	}
 }
 </code></pre>

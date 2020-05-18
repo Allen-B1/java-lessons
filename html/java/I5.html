@@ -46,7 +46,18 @@ pre, code, tt {
 <pre><code class="language-java">Scanner sc = new Scanner(System.in);
 </code></pre>
 <p>To actually retrieve a <code>String</code> from the user, use <code>sc.nextLine()</code>. That expression that will ask the user for input then evaluate to whatever the user types in.</p>
+<pre><code class="language-java">String s = sc.nextLine();
+byte i1 = sc.nextByte();
+short i2 = sc.nextShort();
+int i3 = sc.nextInt();
+float f1 = sc.nextFloat(); 
+double f2 = sc.nextDouble();
+</code></pre>
 <p>If you want a <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, or <code>boolean</code>, use <code>nextByte</code>, <code>nextShort</code>, <code>nextInt</code>, <code>nextLong</code>, <code>nextFloat</code>, <code>nextDouble</code>, and <code>nextBoolean</code> instead of <code>nextLine</code>.</p>
+<h1>Exercise</h1>
+<p>Ask the user for their name.<br>
+Store it into a variable.<br>
+Print out their name.</p>
 
 	</body>
 </html>
