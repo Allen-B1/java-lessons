@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>java/O4</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Inheritance</h1>
+<p>Inheritance allows you to take the properties and methods of another class and create a new<br>
+class with new properties and methods.</p>
+<pre><code class="language-java">class Main {
+	static class Thing {
+		public String name;
+
+		public void printInfo() {
+			System.out.println(&quot;Thing: &quot; + name);
+		}
+
+		public Thing(String name) {
+			this.name = name;
+		}
+	}
+
+	// Here, Thing is called the superclass
+	// and Animal is the subclass.
+	static class Animal extends Thing {
+		public int age;
+		public Animal(String name, int age) {
+			// This statement calls the Thing constructor.
+			super(name);
+
+			this.age = age;
+		}
+
+		// You can override methods
+		// of the superclass.
+		//
+		// You should always use @Override
+		// when overriding methods.
+		@Override public void printInfo() {
+			// This statement calls `Thing::printInfo`
+			super.printInfo();
+
+			System.out.println(&quot;Animal: &quot; + name + &quot;, age &quot; + age);
+		}
+	}
+
+	static class Person extends Animal {
+		public String occupation;
+		public Person(String name, int age, String occupation) {
+			// This statement calls the Animal constructor.
+			super(name, age);
+
+			this.occupation = occupation;
+		}
+
+		@Override public void printInfo() {
+			System.out.println(name + &quot;: &quot; + occupation + &quot;, age &quot; + age);
+		}
+
+		// Average age of death - current age
+		@Override public int yearsLeft() {
+			return 72 - age;
+		}
+	}
+
+	public static void main(String[] args) {
+		Animal a = new Animal(&quot;Lemon&quot;, 10);
+		Person b = new Person(&quot;Bob&quot;, 5, &quot;builder&quot;);
+		Person c = new Person(&quot;Steve&quot;, 35, &quot;musician&quot;);
+
+		// Thing: Lemon
+		// Animal: Lemon, age 10
+		a.printInfo();
+
+		// Steve: musician, age 35
+		c.printInfo();
+		System.out.println(c.yearsLeft()); // 37
+
+		// A Person is a Thing, therefore
+		// a Person instance
+		// can be treated like
+		// a Thing instance.
+		Thing x = b;
+		// Bob: builder, age 5
+		x.printInfo();
+
+		// However, not all Things are Persons,
+		// so Thing instances cannot
+		// automatically be treated
+		// like Person instances.
+		// The following would error
+		// x.yearsLeft();
+	}
+}
+</code></pre>
+
+	</body>
+</html>

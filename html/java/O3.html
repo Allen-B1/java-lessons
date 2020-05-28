@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>java/O3</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Classes: Static Methods &amp; Fields</h1>
+<p>Unlike normal methods &amp; fields, <code>static</code> methods &amp; fields<br>
+are not associated with a specific instance of<br>
+an object.</p>
+<pre><code class="language-java">class Main {
+	static class Person {
+		public String name;
+		public int age;
+
+		// A static field.
+		// This is not tied to a specific instance.
+		public static int counter = 0;
+
+		public void printInfo() {
+			System.out.println(this.name + &quot;: age &quot; + this.age);
+		}
+
+		public Person(String name, int age) {
+			this.name = name;
+			this.age = age;
+
+			counter += 1;
+		}
+
+		public static void printCounter() {
+			System.out.println(counter);
+
+			// Static methods are not called
+			// on a particular instance;
+			// therefore, `this` is not
+			// available. The following
+			// would fail if uncommented.
+
+			// System.out.println(this.name);
+		}
+	}
+
+	public static void main(String[] args) {
+		Person p1 = new Person(&quot;Steve&quot;, 35);
+		Person p2 = new Person(&quot;Bob&quot;, 5);
+		p1.printInfo();
+
+		// 2
+		Person.printCounter();
+	}
+}
+</code></pre>
+
+	</body>
+</html>

@@ -35,6 +35,7 @@ combine combine multiple independent values.</p>
 <pre><code class="language-java">class Main {
 	// Custom Data Type!
 	static class Person {
+		// Fields aka Properties aka Members
 		public String name;
 		public int age;
 	}
@@ -45,6 +46,7 @@ combine combine multiple independent values.</p>
 
 	public static void main(String[] args) {
 		// `new` creates a new *instance*
+		// p is the instance, Person is the class.
 		Person p = new Person();
 		p.name = &quot;Hello&quot;;
 		p.age = 31;
@@ -52,6 +54,64 @@ combine combine multiple independent values.</p>
 	}
 }
 </code></pre>
+<h2>Methods Revisited</h2>
+<pre><code class="language-java">class Main {
+	static class Person {
+		public String name;
+		public int age;
+
+		// Methods allow programmers
+		// to define functionality
+		// on custom types.
+		//
+		// `this` refers to the
+		// current instance
+		public void printInfo() {
+			System.out.println(this.name + &quot;: age &quot; + this.age);
+		}
+	}
+
+	public static void main(String[] args) {
+		Person p = new Person();
+		p.name = &quot;Hello&quot;;
+		p.age = 31;
+		p.printInfo();
+	}
+}
+</code></pre>
+<h2>Constructors</h2>
+<pre><code class="language-java">class Main {
+	static class Person {
+		public String name;
+		public int age;
+
+		public void printInfo() {
+			System.out.println(this.name + &quot;: age &quot; + this.age);
+		}
+
+		// Constructors are functions
+		// that are called when an
+		// instance is created
+		public Person(String name, int age) {
+			this.name = name;
+			this.age = age;
+			System.out.println(&quot;New person :)&quot;);
+		}
+	}
+
+	public static void main(String[] args) {
+		Person p = new Person(&quot;Steve&quot;, 35); // New person :)
+		p.printInfo(); // Steve: age 35
+	}
+}
+</code></pre>
+<h2>Exercise</h2>
+<p>Create a custom class called <code>Pet</code> that<br>
+contains various properties of an pet<br>
+(e.g. name, age, species, breed, etc.). On your <code>Pet</code><br>
+class, define a method called <code>toString</code> that<br>
+takes no arguments and returns a <code>String</code> description<br>
+of the pet.</p>
 
 	</body>
 </html>
