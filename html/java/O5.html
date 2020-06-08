@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>java/O5</title>
+		<script src="https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+		<meta charset="utf8">
+		<script>hljs.initHighlightingOnLoad();</script>
+		<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	padding: 16px;
+	margin: auto;
+	max-width: 1000px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Comfortaa', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	border-bottom: 2px solid #aaa;
+}
+pre, code, tt {
+	font-family: 'Roboto Mono', monospace;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Abstract Classes &amp; Interfaces</h1>
+<p>An <em>interface</em> defines a set of methods that classes that <em>implement</em> the
+interface must define.</p>
+<pre><code class="language-java">// Any class that implements Throwable
+// must define void throw()
+interface Throwable {
+	void throw();
+}
+</code></pre>
+<p>Interfaces, unlike classes, cannot directly have instances (i.e. you can't write <code>new Punchable()</code> or <code>new Throwable()</code>).
+Interfaces cannot have member fields or concrete methods.</p>
+<p>Instead of <code>extends</code>, <code>implements</code> is used to specify that a class implements an interface.</p>
+<pre><code class="language-java">class Glass implements Throwable {
+	@Override public void throw() {
+		System.out.println(&quot;*crack*&quot;);
+	}
+}
+</code></pre>
+<pre><code class="language-java">interface Punchable {
+	void punch();
+}
+</code></pre>
+<p>Unlike inheritance, a class can implement multiple interfaces.</p>
+<pre><code class="language-java">class Person implements Throwable, Punchable {
+	@Override public void punch() {
+		System.out.println(&quot;ouch!&quot;);
+	}
+	@Override public void throw() {
+		System.out.println(&quot;ouch!&quot;);
+	}
+}
+</code></pre>
+<p>Interfaces can inherit from each other.</p>
+<pre><code class="language-java">// A class that implements PrecisePunchable
+// must have a punch and a punchPrecise method and
+// will automatically implement Punchable.
+interface PrecisePunchable extends Punchable {
+	void punchPrecise(double strength);
+}
+</code></pre>
+<pre><code class="language-java">class Main {
+	public static void main(String[] args) {
+		Person a = new Person();
+		a.throw();
+
+		Punchable b = a;
+		b.punch();
+
+		Throwable c = new Glass();
+		c.throw();
+	}
+}
+</code></pre>
+
+	</body>
+</html>
