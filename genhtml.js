@@ -2,7 +2,7 @@
 
 const hljs = require('highlightjs');
 const md = require('markdown-it')({
-	breaks: true,
+	breaks: false,
 	linkify: true,
 }).use(require('markdown-it-mermaid').default)
 	.use(require('markdown-it-sup'));

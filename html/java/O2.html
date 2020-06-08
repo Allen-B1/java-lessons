@@ -30,7 +30,7 @@ pre, code, tt {
 	</head>
 	<body>
 		<h1>Classes: Member Fields</h1>
-<p>To make a custom data type, use classes. Classes<br>
+<p>To make a custom data type, use classes. Classes
 combine combine multiple independent values.</p>
 <pre><code class="language-java">class Main {
 	// Custom Data Type!
@@ -105,12 +105,42 @@ combine combine multiple independent values.</p>
 	}
 }
 </code></pre>
+<h2>Classes in Separate Files</h2>
+<p>When you place classes in separate files, the file name must be the name of the toplevel class, followed by <code>.java</code>.</p>
+<p><code>Person.java</code>:</p>
+<pre><code class="language-java">static class Person {
+	public String name;
+	public int age;
+
+	public void printInfo() {
+		System.out.println(this.name + &quot;: age &quot; + this.age);
+	}
+
+	// Constructors are functions
+	// that are called when an
+	// instance is created
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+		System.out.println(&quot;New person :)&quot;);
+	}
+}
+
+</code></pre>
+<p><code>Main.java</code>:</p>
+<pre><code class="language-java">class Main {
+	public static void main(String[] args) {
+		Person p = new Person(&quot;Steve&quot;, 35); // New person :)
+		p.printInfo(); // Steve: age 35
+	}
+}
+</code></pre>
 <h2>Exercise</h2>
-<p>Create a custom class called <code>Pet</code> that<br>
-contains various properties of an pet<br>
-(e.g. name, age, species, breed, etc.). On your <code>Pet</code><br>
-class, define a method called <code>toString</code> that<br>
-takes no arguments and returns a <code>String</code> description<br>
+<p>Create a custom class called <code>Pet</code> that
+contains various properties of an pet
+(e.g. name, age, species, breed, etc.). On your <code>Pet</code>
+class, define a method called <code>toString</code> that
+takes no arguments and returns a <code>String</code> description
 of the pet.</p>
 
 	</body>
